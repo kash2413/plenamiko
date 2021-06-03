@@ -1,0 +1,4666 @@
+<!DOCTYPE html>
+<html lang="pl" class="no-js">
+<head>
+  <meta charset="utf-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b2e8f9d2e","applicationID":"30330855","transactionName":"JQwNREZbWFlcQBlbWRVMFVlRQ0caUV1bXQ==","queueTime":1,"applicationTime":131,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b2e8f9d2e",applicationID:"30330855"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://restaumatic.imgix.net">
+<link rel="preconnect" href="https://restaumatic.imgix.net">
+<link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+
+<link rel="preload" as="font" href="https://dmbdno5jmf70v.cloudfront.net/pendolino/webpack/526b167894acb610166ccbf5a485e031.woff2" type="font/woff2" crossorigin="anonymous">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="ECckLxUnVTPfqt/+rRuJxIgtwok/opv0qHkAb81GjeTRCo9uT433D8rucNz7mlmTyDyUsEoYdCPrVHiCHDQY/A==">
+<!-- home -->
+
+<link rel="shortcut icon" href="images/1611587450.png" sizes="32x32">
+<link rel="icon" href="images/1611587450_1.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="images/1611587450_2.png">
+<meta name="msapplication-TileImage" content="https://restaumatic.imgix.net/uploads/sites/36565/1611587450.png?auto=compress&amp;crop=focalpoint&amp;fit=max&amp;h=270&amp;w=270">
+
+
+<link rel="canonical" href="https://www.trattoriazacisze.pl/">
+
+<meta property="og:title" content="Trattoria Zacisze  - Zamów i zapłać online - Trattoria Zacisze ">
+<meta property="og:description" content="Trattoria Zacisze  - Zamów przez internet, zapłac gotówką lub online, dowieziemy do domu i biura">
+<meta property="og:type" content="website">
+<meta property="og:url" href="https://www.trattoriazacisze.pl/">
+
+
+<meta name="google-site-verification" content>
+
+  <script src="js/bundle.min.js" crossorigin="anonymous">
+</script>
+
+<script type="text/javascript">
+  var quotes = ["", '"', "'"];
+  var symbols = ['Promise', '$', 'ahoy', 'jQuery', 'I18n', 'moment', 'jigsaw', 'ComboSearch', 'ZiteReader'];
+  var msg_templates = ["X is not defined", "Can't find variable: X", "X is undefined"];
+  var ignores = [];
+  quotes.forEach(function (q) {
+    symbols.forEach(function (s) {
+      msg_templates.forEach(function (m) {
+        ignores.push(m.replace("X", q + s + q));
+      });
+    });
+  });
+
+
+  Sentry.init({
+    dsn: 'https://844eecb5a0da4da99b3918516f5a379d@app.getsentry.com/85290',
+    release: "9772bd93a0a5258fd08626086593ff786f416669",
+    environment: "production",
+    ignoreErrors: ignores.concat([
+      /Blocked a frame with origin/,
+      /__firefox__/,
+      /BlockAdBlock/,
+      /DataCloneError/,
+      // Random plugins/extensions
+      'top.GLOBALS',
+      // See: http://blog.errorception.com/2012/03/tale-of-unfindable-js-error.html
+      'originalCreateNotification',
+      'canvas.contentDocument',
+      'MyApp_RemoveAllHighlights',
+      'http://tt.epicplay.com',
+      'http://loading.retry.widdit.com/',
+      'atomicFindClose',
+      // Facebook borked
+      'fb_xd_fragment',
+      // ISP "optimizing" proxy - `Cache-Control: no-transform` seems to reduce this. (thanks @acdha)
+      // See http://stackoverflow.com/questions/4113268/how-to-stop-javascript-injection-from-vodafone-proxy
+      'bmi_SafeAddOnload',
+      'EBCallBackMessageReceived',
+      // See http://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
+      'conduitPage'
+    ]),
+    denyUrls : [
+      /cjs\.ptengine\.com/i,
+      // Facebook flakiness
+      /graph\.facebook\.com/i,
+      // Facebook blocked
+      /connect\.facebook\.net\/en_US\/all\.js/i,
+      // Woopra flakiness
+      /eatdifferent\.com\.woopra-ns\.com/i,
+      /static\.woopra\.com\/js\/woopra\.js/i,
+      // Chrome extensions
+      /extensions\//i,
+      /^chrome:\/\//i,
+      // Other plugins
+      /127\.0\.0\.1:4001\/isrunning/i,  // Cacaoweb
+      /webappstoolbarba\.texthelp\.com\//i,
+      /metrics\.itunes\.apple\.com\.edgesuite\.net\//i,
+      /translate\.googleusercontent\.com/i
+    ]
+  });
+</script>
+
+
+<script type="text/javascript">
+  if (!window.Skubacz) {
+    var locale = "pl";
+    window.Skubacz = {configuration: { locale: locale }};
+  }
+
+  function browserSupportsAllFeatures() {
+    return window.Promise && window.fetch && window.Symbol && Object.entries && Object.assign;
+  }
+
+  function loadScript(src) {
+    console.log("Loading script: " + src);
+    var js = document.createElement('script');
+    js.src = src;
+    js.onload = function() {
+      console.log("Script loaded: " + src);
+    };
+    js.onerror = function() {
+      console.log("Script load error: " + src);
+    };
+    document.head.appendChild(js);
+  }
+
+  function checkBrowserSupport() {
+    if (browserSupportsAllFeatures()) {
+      console.log("We are in a modern browser, doing nothing ");
+    } else {
+      console.log("We are in an older browser, loading polyfills");
+      loadScript('https://polyfill.io/v3/polyfill.js?features=es5,es6,Object.entries,NodeList.prototype.forEach&flags=gated');
+    }
+  }
+
+  checkBrowserSupport();
+
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js'); // 
+</script>
+
+
+  
+  
+  <title>Trattoria Zacisze  - Zamów i zapłać online - Trattoria Zacisze </title>
+  <meta name="description" content="Trattoria Zacisze  - Zamów przez internet, zapłac gotówką lub online, dowieziemy do domu i biura">
+  <meta name="keywords" content="Zamów online, Dostawa, Dowóz, Płatności online">
+
+  
+  
+  <link href="css/css.css" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" media="screen" href="css/fiesta-36fe8e037f3682003294.css">
+  <script src="js/fiesta-36fe8e037f3682003294.js" async="async"></script>
+
+  <link href="css/theme-eb19e68bfd42f8881c20178e3032d760.css" media="screen" rel="stylesheet" type="text/css">
+
+  
+  
+  <script type="text/javascript">
+    Skubacz.configuration.editing = false;
+    Skubacz.configuration.breakpoints = {
+      gridFloatBreakpoint: 992,
+      smallMin: 640,
+      mediumMin: 992,
+      extraMediumMin: 1024,
+      largeMin: 1400,
+      extraLargeMin: 1750
+    };
+  </script>
+</head>
+<body class="l-home">
+
+
+
+
+
+<script>
+  if ("RestaumaticMobileApp" in window && typeof window.RestaumaticMobileApp.isMobileApp === "function" && window.RestaumaticMobileApp.isMobileApp()) {
+    document.getElementsByTagName("body")[0].className += " l-mobile-app";
+  }
+</script>
+
+<!-- Icons -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;" class="svg-icons">
+  <symbol id="svg-icon-lactose-free" viewBox="0 0 20 20"><g fill="currentColor"><path d="M10 0C4.477 0 0 4.477 0 10c0 5.522 4.477 10 10 10 5.522 0 10-4.478 10-10 0-5.523-4.478-10-10-10zm0 18.941a8.905 8.905 0 0 1-5.938-2.264l2.659-2.656-.003-1.495-3.405 3.401A8.905 8.905 0 0 1 1.058 10c0-4.931 4.012-8.942 8.942-8.942 2.273 0 4.352.855 5.931 2.259l-3.243 3.228.501 1.016 3.493-3.493a8.906 8.906 0 0 1 2.26 5.934c-.001 4.928-4.012 8.939-8.942 8.939z"/><path d="M7.775 16.07h4.933a.57.57 0 0 0 .569-.569V9.874c0-.504-.163-1.265-.369-1.732l-.37-.836c-.145-.327-.44-.825-.59-1.071v-.03H8.534v.044c-.129.234-.396.729-.542 1.04l-.396.848c-.219.467-.39 1.23-.39 1.737v5.627a.57.57 0 0 0 .569.569zm0 0M8.534 5.067h3.414a.57.57 0 0 0 0-1.138H8.534a.57.57 0 0 0 0 1.138zm0 0"/></g></symbol>
+  <symbol id="svg-icon-gluten-free" viewBox="0 0 20 20"><g fill="currentColor"><path d="M10.523 14.026l2.686-.294 2.271 2.267.537-.534-2.273-2.266.295-2.678-6.54-6.522-.537.534.862.86-.189 1.715-2.189-2.184-.536.534L7.1 7.642l-1.719.189-.862-.86-.537.534 6.541 6.521zm-.393-4.432l.189-1.713 1.121 1.116-.189 1.714-1.121-1.117zm.584 1.652l-1.719.188-1.119-1.116 1.718-.188 1.12 1.116zM7.786 8.327l1.121 1.116-1.719.189-1.12-1.116 1.718-.189zm.726-2.248l1.12 1.117-.19 1.713-1.12-1.117.19-1.713zm4.547 6.435l-1.121-1.116.188-1.714 1.121 1.116-.188 1.714zm-2.257.721l-1.12-1.116 1.718-.188 1.121 1.116-1.719.188zm1.719-.187"/><path d="M10 0C4.461 0-.029 4.477-.029 10c0 5.522 4.49 10 10.029 10s10.029-4.479 10.029-10c0-5.523-4.49-10-10.029-10zm0 18.939a8.942 8.942 0 0 1-5.95-2.258l4.142-4.13-.752-.75-4.141 4.131A8.884 8.884 0 0 1 1.032 10c0-4.93 4.023-8.941 8.968-8.941 2.281 0 4.365.855 5.949 2.259L11.855 7.4l.752.749 4.094-4.081a8.881 8.881 0 0 1 2.268 5.933c0 4.93-4.024 8.938-8.969 8.938z"/></g></symbol>
+  <symbol id="svg-icon-sea-food" viewBox="0 0 20 20"><g fill="currentColor"><path d="M10 1.058c4.931 0 8.941 4.012 8.941 8.942 0 4.93-4.011 8.941-8.941 8.941-4.93 0-8.942-4.011-8.942-8.941 0-4.93 4.012-8.942 8.942-8.942M10 0C4.477 0 0 4.477 0 10c0 5.522 4.477 10 10 10 5.522 0 10-4.478 10-10 0-5.523-4.478-10-10-10z"/><path d="M4.089 9.695c.435.934-.702 1.498-1.017 2.158-.016.034-.015.059.001.074.184.196 2.42-.727 2.959-.998.162-.082.39-.251.477-.18.649.53 1.739 1.148 3.118 1.541.035.01.069.046.027.093l-.621.494s-.059.039.065.074c.142.039.454.077 1.109.189 1.239.211 2.467-.576 2.562-.587 1.167-.122 1.903-.518 1.903-.518.063-.027.054-.11.018-.127-.209-.174-.576-.333-.578-.528 0-.007.011-.039.025-.042.011-.002.029.004.057.017.027.012.72.272.817.302.363.109.528-.01.551-.006 1.084-.514 1.381-.883 1.381-1.433 0-.82-1.91-2.894-4.734-2.99-.124-.016-.187-.042-.247-.063l-.527-.188c-1.036-.369-2.232.033-2.52.126-.06.02-.014.059-.014.059l.581.406c.039.036.01.053-.012.06-1.356.436-2.384 1.218-3.09 1.658-.14.087-.352-.027-.352-.027s-1.218-.587-1.817-.988a6.913 6.913 0 0 0-.663-.403c-.913-.416-.273.611-.263.627l.004.007c.056.092.116.187.178.281v.001c.275.415.577.817.622.911zm10.566-.063a.364.364 0 0 1-.36-.367c0-.203.161-.367.36-.367s.36.164.36.367a.363.363 0 0 1-.36.367zm-1.611 2.087c-2.238-2.012-.327-3.522-.133-3.756.019-.023.02.006.02.006s-.545 1.002-.49 1.82a4.39 4.39 0 0 0 .635 1.937c.011.043-.011.012-.032-.007zm0 0"/></g></symbol>
+  <symbol id="svg-icon-vegan" viewBox="0 0 20 20"><g fill="currentColor"><path d="M10 1.059c4.93 0 8.942 4.011 8.942 8.942 0 4.93-4.012 8.941-8.942 8.941S1.058 14.931 1.058 10c0-4.93 4.011-8.941 8.942-8.941M10 0C4.477 0 0 4.477 0 10c0 5.522 4.477 10 10 10s10-4.478 10-10c0-5.523-4.478-10-10-10z"/><path d="M15.239 6.478h-1.185l.927-.927a.365.365 0 1 0-.518-.517l-.927.927V4.776a.364.364 0 1 0-.73 0v1.305c-1.051-.682-2.285-.721-2.994-.013a8.871 8.871 0 0 0-.48.555l.738.738a.365.365 0 1 1-.516.516l-.68-.68a54.803 54.803 0 0 0-1.33 1.771l.976.977a.364.364 0 0 1-.258.623.366.366 0 0 1-.259-.107l-.888-.889c-.193.276-.386.557-.574.837-2.438 3.641-2.295 4.564-1.897 4.962.751.752 2.977-.636 3.936-1.232l-.576-.577a.365.365 0 1 1 .517-.517l.69.69a51.728 51.728 0 0 0 2.434-1.702l-.54-.539a.365.365 0 1 1 .517-.517l.613.613c.86-.654 1.513-1.189 1.713-1.389.431-.431.604-1.057.486-1.762a3.245 3.245 0 0 0-.496-1.232h1.302a.366.366 0 0 0 .366-.366.367.367 0 0 0-.367-.363"/></g></symbol>
+  <symbol id="svg-icon-fit" viewBox="0 0 20 20"><g fill="currentColor"><path d="M10 1.058c4.931 0 8.941 4.012 8.941 8.942 0 4.93-4.011 8.941-8.941 8.941-4.93 0-8.942-4.011-8.942-8.941 0-4.93 4.012-8.942 8.942-8.942M10 0C4.477 0 0 4.477 0 10c0 5.522 4.477 10 10 10 5.522 0 10-4.478 10-10 0-5.523-4.478-10-10-10z"/><path d="M12.469 10.973a.3.3 0 0 1-.222-.098l-.615-.672-1.358 2.944a.301.301 0 0 1-.273.175l-.013-.001a.3.3 0 0 1-.27-.198L8.396 9.46l-.604 1.335a.3.3 0 0 1-.274.177H5.167c.857 1.476 2.427 2.952 4.669 4.393a.3.3 0 0 0 .325 0c2.243-1.439 3.813-2.917 4.671-4.393h-2.363zm0 0"/><path d="M7.324 10.371l.829-1.834a.3.3 0 0 1 .286-.177.299.299 0 0 1 .271.198l1.324 3.671 1.24-2.69a.301.301 0 0 1 .496-.077l.832.908h2.541c.562-1.249.487-2.236.31-2.867a2.999 2.999 0 0 0-3.442-2.124c-.766.138-1.39.544-1.804 1.174a3.005 3.005 0 0 0-.207.374 2.992 2.992 0 0 0-.207-.373c-.413-.63-1.036-1.036-1.802-1.174a2.998 2.998 0 0 0-3.442 2.124c-.179.631-.253 1.618.308 2.867h2.467zm0 0"/></g></symbol>
+  <symbol id="svg-icon-vegetarian" viewBox="0 0 20 20"><g fill="currentColor"><path d="M9.999 1.058c4.931 0 8.942 4.012 8.942 8.942 0 4.93-4.012 8.941-8.942 8.941-4.93 0-8.941-4.012-8.941-8.941 0-4.931 4.011-8.942 8.941-8.942m0-1.058C4.477 0 0 4.477 0 10c0 5.522 4.477 10 9.999 10C15.522 20 20 15.522 20 10 20 4.477 15.522 0 9.999 0z"/><path d="M7.017 6.546C4.58 7.96 4.719 10.263 4.803 11.115c3.148-3.729 7.856-3.548 7.856-3.548s-6.675 2.289-8.635 6.88c-.154.363.727.833.928.406.601-1.277 1.437-2.234 1.437-2.234 1.234.459 3.368.997 4.881-.067 2.01-1.414 1.805-4.55 4.673-6.075.671-.359-5.624-1.848-8.926.069zm0 0"/></g></symbol>
+  <symbol id="svg-icon-spicy-1" viewBox="0 0 20 20"><g fill="currentColor"><path d="M10 1.058c4.93 0 8.942 4.012 8.942 8.942 0 4.93-4.012 8.941-8.942 8.941-4.931 0-8.942-4.012-8.942-8.941C1.059 5.069 5.07 1.058 10 1.058M10 0C4.478 0 0 4.477 0 10c0 5.522 4.478 10 10 10s10-4.478 10-10c0-5.523-4.477-10-10-10z"/><path d="M15.443 5.552a.607.607 0 1 0-.846.868c.002.002.201.232.182.674-.009.195-.067.482-.252.853.194.108.374.237.532.393a2.4 2.4 0 0 1 .371.472c.344-.571.538-1.128.561-1.665.042-.992-.487-1.537-.548-1.595zm0 0M13.15 8.41c-.808 0-1.664.402-2.132 1.055-2.396 3.341-4.82 3.513-6.095 3.513-.146 0-.276-.003-.39-.003-.444 0-.633.034-.465.366.398.785 2.212 1.748 4.44 1.748 1.794 0 3.858-.625 5.665-2.469.911-.93 1.249-2.793.318-3.704-.356-.35-.839-.506-1.341-.506zm0 0"/></g></symbol>
+  <symbol id="svg-icon-spicy-2" viewBox="0 0 20 20"><g fill="currentColor"><path d="M10 1.058c4.93 0 8.941 4.012 8.941 8.942 0 4.93-4.011 8.941-8.941 8.941-4.931 0-8.942-4.012-8.942-8.941 0-4.931 4.012-8.942 8.942-8.942M10 0C4.477 0 0 4.477 0 10c0 5.522 4.477 10 10 10 5.522 0 10-4.478 10-10 0-5.523-4.478-10-10-10z"/><path d="M15.442 5.552a.605.605 0 1 0-.846.868c.002.002.201.232.183.674-.009.195-.067.482-.253.853.194.108.375.237.533.393a2.4 2.4 0 0 1 .371.472c.344-.571.537-1.128.561-1.665.041-.992-.487-1.537-.549-1.595zm0 0M13.149 8.41c-.807 0-1.663.402-2.131 1.055-2.396 3.341-4.82 3.513-6.095 3.513-.146 0-.276-.003-.39-.003-.444 0-.633.034-.465.366.397.785 2.211 1.748 4.439 1.748 1.795 0 3.858-.625 5.665-2.469.911-.93 1.249-2.793.318-3.704-.355-.35-.838-.506-1.341-.506zm0 0"/><path d="M5.563 11.374c-.045-.59.065-1.929 1.824-2.683 0 0-.653 1.58.232 2.379.641-.501 1.093-1.319 1.139-2.11.133-2.281-1.46-3.482-2.494-4.018a.277.277 0 0 0-.38.365c.4.849.668 2.366-1.041 4.133-.522.539-.097 1.531.72 1.934zm0 0"/></g></symbol>
+  <symbol id="svg-icon-spicy-3" viewBox="0 0 20 20"><g fill="currentColor"><path d="M10 1.058c4.931 0 8.941 4.012 8.941 8.942 0 4.93-4.011 8.941-8.941 8.941-4.93 0-8.942-4.012-8.942-8.941 0-4.931 4.012-8.942 8.942-8.942M10 0C4.477 0 0 4.477 0 10c0 5.522 4.477 10 10 10 5.522 0 10-4.478 10-10 0-5.523-4.478-10-10-10z"/><path d="M15.442 5.552a.605.605 0 1 0-.846.868c.002.002.201.232.183.674-.009.195-.067.482-.253.853.194.108.375.237.533.393a2.4 2.4 0 0 1 .371.472c.344-.571.537-1.128.561-1.665.041-.992-.487-1.537-.549-1.595zm0 0M13.149 8.41c-.807 0-1.663.402-2.131 1.055-2.396 3.341-4.82 3.513-6.095 3.513-.146 0-.276-.003-.39-.003-.444 0-.633.034-.465.366.397.785 2.211 1.748 4.439 1.748 1.795 0 3.858-.625 5.665-2.469.911-.93 1.249-2.793.318-3.704-.355-.35-.838-.506-1.341-.506zm0 0"/><path d="M9.074 5.599a.168.168 0 0 0-.196.028.168.168 0 0 0-.036.194c.199.424.344 1.121-.182 1.951-.357-1.526-1.56-2.397-2.397-2.83a.277.277 0 0 0-.38.365c.4.849.668 2.366-1.041 4.133-.521.539-.096 1.53.721 1.934-.045-.59.065-1.929 1.824-2.683 0 0-.653 1.58.232 2.379.641-.501 1.093-1.319 1.139-2.11.003-.051 0-.099.002-.148.137-.327.421-.679 1-.927 0 0-.398.963.141 1.45.392-.305.667-.804.695-1.286.08-1.392-.892-2.124-1.522-2.45z"/></g></symbol>
+  <symbol id="svg-icon-restaumatic" viewBox="202.273 450 621.186 125.97"><title>Restaumatic</title><g fill="currentColor"><g><path d="m 360.218,535.5037 v -45.0375 h 5.3614 l 1.4156,5.7478 c 3.9461,-3.8313 8.6925,-5.7478 14.2404,-5.7478 v 6.6056 c -5.3762,0 -9.7367,1.9021 -13.0824,5.7047 v 32.7272 z"/><path d="m 426.573,515.258 h -31.6119 c 0,9.2084 5.3756,13.8116 16.1277,13.8116 4.8322,0 9.2361,-0.4289 13.2109,-1.2867 v 6.4338 c -3.9748,0.8578 -8.8076,1.287 -14.4978,1.287 -15.1841,0 -22.7761,-7.678 -22.7761,-23.0332 0,-14.6693 6.9057,-22.0043 20.7173,-22.0043 14.6406,0 20.9171,8.2647 18.8299,24.7918 z m -31.6119,-6.605 v 0 h 24.3629 c -0.1715,-7.8925 -4.0317,-11.8386 -11.5809,-11.8386 -8.0068,0 -12.2673,3.9461 -12.782,11.8386 z"/><path d="m 437.2103,533.359 v -6.863 c 5.29,1.7158 10.6376,2.5736 16.0421,2.5736 7.1771,0 10.766,-2.1447 10.766,-6.4338 0,-4.0028 -2.5024,-6.0052 -7.5061,-6.0052 h -6.4341 c -9.7225,0 -14.5834,-4.4314 -14.5834,-13.2965 0,-8.5785 6.2476,-12.8679 18.7441,-12.8679 5.3756,0 10.7087,0.7155 15.999,2.1447 v 6.863 c -5.2903,-1.7158 -10.6234,-2.5736 -15.999,-2.5736 -7.492,0 -11.238,2.1447 -11.238,6.4338 0,4.0037 2.359,6.0052 7.0773,6.0052 h 6.4341 c 10.2943,0 15.4414,4.4323 15.4414,13.2965 0,8.5785 -6.2342,12.8679 -18.7013,12.8679 -5.4045,0 -10.7521,-0.7147 -16.0421,-2.1447 z"/><path d="m 482.6769,483.1747 h 4.9754 l 1.7158,7.2915 h 12.1816 v 6.4341 h -10.9378 v 25.8642 c 0,4.2035 1.8156,6.3051 5.4474,6.3051 h 5.4904 v 6.4341 h -7.5492 c -7.5493,0 -11.3236,-4.0459 -11.3236,-12.1388 z"/><path d="m 509.4847,521.9064 c 0,-8.6644 6.0905,-12.9963 18.2722,-12.9963 3.9174,0 7.8346,0.2866 11.7527,0.8581 v -5.1044 c 0,-5.1755 -4.0468,-7.7635 -12.1388,-7.7635 -4.6324,0 -9.3793,0.7155 -14.2404,2.1447 v -6.4341 c 4.8611,-1.4292 9.608,-2.1447 14.2404,-2.1447 13.3826,0 20.0738,4.6619 20.0738,13.9833 v 31.0542 h -4.4609 l -2.7451,-4.4609 c -4.4895,2.9741 -9.3792,4.4609 -14.6692,4.4609 -10.7232,0 -16.0847,-4.5324 -16.0847,-13.5973 z m 18.2722,-6.5625 v 0 c -6.8916,0 -10.3372,2.1447 -10.3372,6.4338 0,4.8617 2.7165,7.2919 8.1497,7.2919 5.4901,0 10.1366,-1.4585 13.9402,-4.375 v -8.4929 c -3.9181,-0.5712 -7.8353,-0.8578 -11.7527,-0.8578 z"/><path d="m 599.1304,490.4662 v 45.0375 h -5.4473 l -1.3726,-5.7479 c -5.4621,3.8322 -10.9522,5.7479 -16.471,5.7479 -10.3515,0 -15.527,-5.59 -15.527,-16.7712 v -28.2663 h 7.9353 v 28.395 c 0,6.6911 3.3168,10.0369 9.951,10.0369 4.5465,0 8.8787,-1.9012 12.9966,-5.7047 v -32.7272 z"/><path d="m 611.9983,535.5037 v -45.0375 h 5.3617 l 1.3294,5.662 c 4.3178,-3.7747 9.0219,-5.662 14.1118,-5.662 6.5199,0 10.9661,2.0591 13.3398,6.1767 4.8898,-4.1176 9.8507,-6.1767 14.8839,-6.1767 10.3513,0 15.527,5.705 15.527,17.1145 v 27.923 h -7.935 v -28.3522 c 0,-6.7195 -2.8309,-10.0797 -8.4929,-10.0797 -4.2321,0 -8.1924,1.9449 -11.8814,5.8334 v 32.5985 h -7.935 v -28.2235 c 0,-6.8051 -2.8026,-10.2084 -8.407,-10.2084 -4.4609,0 -8.4498,1.9449 -11.967,5.8334 v 32.5985 z"/><path d="m 687.2751,521.9064 c 0,-8.6644 6.0908,-12.9963 18.2724,-12.9963 3.9175,0 7.8347,0.2866 11.7525,0.8581 v -5.1044 c 0,-5.1755 -4.0465,-7.7635 -12.1386,-7.7635 -4.6323,0 -9.3792,0.7155 -14.2404,2.1447 v -6.4341 c 4.8612,-1.4292 9.6081,-2.1447 14.2404,-2.1447 13.3827,0 20.0739,4.6619 20.0739,13.9833 v 31.0542 h -4.4609 l -2.7451,-4.4609 c -4.4895,2.9741 -9.3793,4.4609 -14.6693,4.4609 -10.7231,0 -16.0849,-4.5324 -16.0849,-13.5973 z m 18.2724,-6.5625 v 0 c -6.8916,0 -10.3371,2.1447 -10.3371,6.4338 0,4.8617 2.7162,7.2919 8.1496,7.2919 5.4902,0 10.1367,-1.4585 13.94,-4.375 v -8.4929 c -3.9178,-0.5712 -7.835,-0.8578 -11.7525,-0.8578 z"/><path d="m 738.1031,483.1747 h 4.9757 l 1.7155,7.2915 h 12.1816 v 6.4341 h -10.9377 v 25.8642 c 0,4.2035 1.8158,6.3051 5.4476,6.3051 h 5.4901 v 6.4341 h -7.5492 c -7.5489,0 -11.3236,-4.0459 -11.3236,-12.1388 z"/><path d="m 775.8487,474.167 v 7.5064 h -7.935 v -7.5064 z m 0,16.2992 v 0 45.0375 h -7.935 v -45.0375 z"/><path d="m 823.4597,534.2167 c -3.7173,0.8578 -7.7207,1.287 -12.0098,1.287 -16.0138,0 -24.0199,-7.7922 -24.0199,-23.3765 0,-14.4403 8.0061,-21.661 24.0199,-21.661 4.2891,0 8.2925,0.4292 12.0098,1.287 v 6.4338 c -3.7173,-0.8578 -7.8639,-1.2867 -12.439,-1.2867 -10.4374,0 -15.6557,5.076 -15.6557,15.2269 0,11.2952 5.2183,16.9424 15.6557,16.9424 4.5751,0 8.7217,-0.4289 12.439,-1.2867 z"/></g><path d="M 318.7635,450 H 211.7531 c -5.214,0 -9.4796,4.2661 -9.4796,9.4802 v 107.0101 c 0,5.2138 4.2656,9.4796 9.4796,9.4796 h 107.0104 c 5.2141,0 9.4799,-4.2658 9.4799,-9.4796 V 459.4802 c 0,-5.2141 -4.2658,-9.4802 -9.4799,-9.4802 z m -8.7004,88.2394 v 0 c 0,0.8183 -0.8858,1.3294 -1.5942,0.9204 l -43.2082,-24.9458 -43.2031,24.9432 c -0.7104,0.4102 -1.5987,-0.1026 -1.5987,-0.9226 v -50.499 c 0,-0.8203 0.8883,-1.3328 1.5987,-0.9229 l 43.2037,24.9437 43.2076,-24.946 c 0.7084,-0.409 1.5942,0.1023 1.5942,0.9207 z"/></g></symbol>
+  <symbol id="svg-icon-arrow-right" viewBox="0 0 16 16"><title>Arrow icon</title><g fill="currentColor"><path d="M16 7.8C16 7.8 16 7.8 16 7.8 16 7.8 16 7.7 16 7.7 16 7.6 16 7.6 16 7.5 16 7.5 16 7.5 16 7.5 15.9 7.5 15.9 7.5 15.9 7.4 15.9 7.4 15.9 7.4 15.9 7.4L7.6 0.1C7.4 0 7.2 0 7.1 0.1 7 0.3 7 0.5 7.1 0.6L14.8 7.3 0.3 7.3C0.1 7.3 0 7.5 0 7.7 0 7.9 0.1 8 0.3 8L14.8 8 7.1 14.8C7 14.9 7 15.1 7.1 15.2 7.1 15.3 7.2 15.3 7.3 15.3 7.4 15.3 7.5 15.3 7.6 15.3L15.9 7.9C15.9 7.9 15.9 7.9 15.9 7.9 15.9 7.9 15.9 7.9 16 7.8L16 7.8Z"/></g></symbol>
+  <symbol id="svg-icon-ellipsis" viewBox="0 0 36 7"><title>Ellipsis</title><g fill="currentColor"><circle cx="3.5" cy="3.5" r="3.5"/><circle cx="17.909" cy="3.547" r="3.5"/><circle cx="32.5" cy="3.5" r="3.5"/></g></symbol>
+  
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="header" class="m-header m-header--full-coverage">
+  <div class="m-header__main ">
+    <header class="m-header__navbar">
+      <div class="m-header__container m-header__container--navbar">
+        <div class="m-flex-group">
+  
+    
+<div class="m-flex-group__item m-flex-group__item--aside">
+  <a href="/" class="m-header__logo">
+    <img src="images/1607332650_1.png" class="m-header__logo-img" alt="Trattoria Zacisze Warszawa">
+  </a>
+</div>
+
+  
+  <div class="m-flex-group__item m-flex-group__item--main">
+    
+      <nav class="m-nav  js-navigation js-scroll-spy-nav" data-navigation="{"activeClassName": "is-active"}">
+  
+    <ul class="m-nav__list">
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Start" href="/">
+      Start
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="O nas" href="/#section-about-us">
+      O nas
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Menu" href="/#section-menu">
+      Menu
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Opinie" href="/#section-reviews">
+      Opinie
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Galeria" href="/#section-gallery">
+      Galeria
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Kontakt" href="/#section-contact">
+      Kontakt
+    </a>
+  </li>
+
+
+      
+    </ul>
+  
+</nav>
+
+    
+  </div>
+
+  <div class="m-flex-group__item m-flex-group__item--aside u-text-right">
+    <ul class="list-inline u-mb0 ">
+      
+      
+        <li class="hidden-xs hidden-sm">
+          <a href="/#section-menu" class="btn btn-default">
+            Zamów online
+          </a>
+        </li>
+      
+      <li class="visible-xs-block visible-sm-block">
+        <div class="m-nav-toggle">
+  <button type="button" class="btn btn-default m-nav-toggle__btn js-navigation-toggle" title="Nawigacja" aria-controls="responsive-nav" data-ga-action="Open mobile navigation (hamburger button clicks)">
+    <span class="icon-reorder m-nav-toggle__icon" aria-hidden="true"></span>
+  </button>
+</div>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </header>
+  </div>
+
+  <section class="m-header__wrapper">
+    
+      <div class="m-header__cover-wrapper">
+        
+          
+            <video id="home-header-cover-video" autoplay muted loop class="m-header__cover " data-src="https://s3.eu-central-1.amazonaws.com/restaumatic-production-pl/uploads/accounts/36535/media_library/368b0f21-db54-428d-8213-32a336681376.mp4" poster="https://restaumatic.imgix.net/uploads/accounts/36535/media_library/cf3f68ab-1394-4d93-b001-c54eaddb145c.jpg?auto=compress&blur=0&crop=focalpoint&fit=max&fp-x=0.5&fp-y=0.5&h=auto&rect=0%2C0%2C1440%2C810&w=992"></video>
+            <script>
+              (function () {
+                if (window.innerWidth > 992) {
+                  var el = document.getElementById("home-header-cover-video");
+                  el.setAttribute("src", el.getAttribute("data-src"));
+                }
+              })();
+            </script>
+          
+        
+      </div>
+    
+    <div class="m-header__content">
+      
+        <div class="m-header__social-icons m-header__social-icons--right">
+          
+          
+          
+          
+          
+
+
+  
+  
+  
+  
+  <div class="m-icon-group m-icon-group--vertical">
+    <ul class="m-icon-group__list">
+      
+        <li class="m-icon-group__list-item">
+          <a href="https://www.facebook.com/Trattoria-Zacisze-115557560316270/?ref=page_internal" title="Facebook" class="btn btn-primary m-icon-group__item" target="_blank" rel="noopener noreferrer">
+            <span class="icon-facebook" aria-hidden="true"></span>
+          </a>
+        </li>
+      
+      
+      
+      
+    </ul>
+  </div>
+  
+
+
+
+
+        </div>
+      
+      <div class="m-header__hero ">
+        
+        
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="m-hero m-hero--media js-slider">
+    <div class="m-hero__list js-slider__list" id="header-slider" data-slick="{"asNavFor": "", "fade": true, "autoplay": false, "autoplaySpeed": 5000, "adaptiveHeight": false}">
+      
+      
+        
+        
+        
+        <article class="m-hero__content js-slider__animation-fix">
+          <div class="m-header__container">
+            <div class="m-hero__row">
+              <div class="m-hero__col">
+                <div class="m-hero__col-inner m-hero__col-inner--media-next">
+                  
+                  <h1 class="m-hero__header">
+                    <span class="m-hero__sup-title animated animated--delay-1 fadeInDown">
+                      
+                      
+
+
+  <span class="char" style="--char-index:0">P</span><span class="char" style="--char-index:1">o</span><span class="char" style="--char-index:2">z</span><span class="char" style="--char-index:3">n</span><span class="char" style="--char-index:4">a</span><span class="char" style="--char-index:5">j</span><span class="whitespace"> </span><span class="char" style="--char-index:6">n</span><span class="char" style="--char-index:7">a</span><span class="whitespace"> </span><span class="char" style="--char-index:8">n</span><span class="char" style="--char-index:9">o</span><span class="char" style="--char-index:10">w</span><span class="char" style="--char-index:11">o</span><span class="char" style="--char-index:12">.</span><span class="char" style="--char-index:13">.</span>
+
+
+                    </span>
+                    <span class="m-hero__title m-hero__title--simple animated animated--delay-2 fadeInDown">
+                      
+                      
+
+
+  <span class="char" style="--char-index:0">W</span><span class="char" style="--char-index:1">ł</span><span class="char" style="--char-index:2">o</span><span class="char" style="--char-index:3">s</span><span class="char" style="--char-index:4">k</span><span class="char" style="--char-index:5">ą</span><span class="whitespace"> </span><span class="char" style="--char-index:6">k</span><span class="char" style="--char-index:7">u</span><span class="char" style="--char-index:8">c</span><span class="char" style="--char-index:9">h</span><span class="char" style="--char-index:10">n</span><span class="char" style="--char-index:11">i</span><span class="char" style="--char-index:12">ę</span><span class="char" style="--char-index:13">!</span>
+
+
+                    </span>
+                  </h1>
+
+                  
+                    <p class="m-hero__description animated animated--delay-3 fadeInDown">
+                      
+                      
+
+
+  
+
+
+                    </p>
+
+                    <p class="m-hero__action animated animated--delay-5 fadeInDown">
+                      <a href="/#section-menu" class="btn btn-primary-on-dark btn-gfb-lg">
+                        Menu
+                      </a>
+                    </p>
+                  
+                </div>
+              </div>
+              
+                <aside class="m-hero__col m-hero__col--media u-order-last"></aside>
+              
+            </div>
+          </div>
+        </article>
+      
+    </div>
+    <div class="m-hero__indicators m-hero__indicators--left">
+      <div class="m-indicators m-indicators--md-vertical">
+        <div class="m-indicators__dots js-slider__indicators" data-class-prefix="m-indicators"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script>
+  (function () {
+    var sliderTimeToWait = 0;
+
+    function convertToMs(val) {
+      return (String(val).indexOf("ms") === -1) ? parseFloat(val) * 1000 : parseInt(val);
+    }
+
+    [].forEach.call(document.querySelectorAll(".js-slider__animation-fix .animated, .js-slider__animation-fix .cell, .js-slider__animation-fix .char"), function (el) {
+      var styles = typeof window.getComputedStyle === "function" ? window.getComputedStyle(el) : {};
+      var animationTime = convertToMs(styles.animationDuration || "0ms") + convertToMs(styles.animationDelay || "0ms");
+      sliderTimeToWait = Math.max(sliderTimeToWait, animationTime);
+    });
+
+    window.Skubacz.configuration.slider_animation_fix = {
+      animation_time: sliderTimeToWait
+    };
+  })();
+</script>
+
+
+      </div>
+      
+    </div>
+    
+  </section>
+</div>
+
+<div class="m-header-navbar js-sticky-header js-affix" data-offset-top="250" data-breakpoint="640">
+  <div class="m-header">
+    <div class="m-header__navbar">
+      <div class="m-header__container">
+        <div class="m-flex-group">
+  
+    
+<div class="m-flex-group__item m-flex-group__item--aside">
+  <a href="/" class="m-header__logo">
+    <img src="images/1607332650_1.png" class="m-header__logo-img" alt="Trattoria Zacisze Warszawa">
+  </a>
+</div>
+
+  
+  <div class="m-flex-group__item m-flex-group__item--main">
+    
+      <nav class="m-nav  js-navigation js-scroll-spy-nav" data-navigation="{"activeClassName": "is-active"}">
+  
+    <ul class="m-nav__list">
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Start" href="/">
+      Start
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="O nas" href="/#section-about-us">
+      O nas
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Menu" href="/#section-menu">
+      Menu
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Opinie" href="/#section-reviews">
+      Opinie
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Galeria" href="/#section-gallery">
+      Galeria
+    </a>
+  </li>
+
+
+      
+        
+  <li class="m-nav__list-item">
+    <a class="m-nav__item" title="Kontakt" href="/#section-contact">
+      Kontakt
+    </a>
+  </li>
+
+
+      
+    </ul>
+  
+</nav>
+
+    
+  </div>
+
+  <div class="m-flex-group__item m-flex-group__item--aside u-text-right">
+    <ul class="list-inline u-mb0 ">
+      
+      
+        <li class="hidden-xs hidden-sm">
+          <a href="/#section-menu" class="btn btn-default">
+            Zamów online
+          </a>
+        </li>
+      
+      <li class="visible-xs-block visible-sm-block">
+        <div class="m-nav-toggle">
+  <button type="button" class="btn btn-default m-nav-toggle__btn js-navigation-toggle" title="Nawigacja" aria-controls="responsive-nav" data-ga-action="Open mobile navigation (hamburger button clicks)">
+    <span class="icon-reorder m-nav-toggle__icon" aria-hidden="true"></span>
+  </button>
+</div>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="mobile-navigation-backdrop js-navigation-toggle"></div>
+<nav id="responsive-nav" class="mobile-navigation mobile-navigation--right js-navigation js-scroll-spy-nav" data-navigation="{"activeClassName": "is-active"}">
+  <header class="mobile-navigation__header">
+    <button type="button" class="mobile-navigation-toggle js-navigation-toggle" aria-controls="responsive-nav" title="Zamknij">&times;</button>
+    <ul class="mobile-navigation__inline-list">
+      
+        <li class="mobile-navigation__inline-list-item">
+          <div class="m-language-select">
+            
+
+          </div>
+        </li>
+      
+    </ul>
+  </header>
+  <ul class="mobile-navigation__list">
+    
+   
+  <li class>
+    <a class title="Start" href="/">
+      Start
+    </a>
+  </li>
+
+
+
+   
+  <li class>
+    <a class title="O nas" href="/#section-about-us">
+      O nas
+    </a>
+  </li>
+
+
+
+   
+  <li class>
+    <a class title="Menu" href="/#section-menu">
+      Menu
+    </a>
+  </li>
+
+
+
+   
+  <li class>
+    <a class title="Opinie" href="/#section-reviews">
+      Opinie
+    </a>
+  </li>
+
+
+
+   
+  <li class>
+    <a class title="Galeria" href="/#section-gallery">
+      Galeria
+    </a>
+  </li>
+
+
+
+   
+  <li class>
+    <a class title="Kontakt" href="/#section-contact">
+      Kontakt
+    </a>
+  </li>
+
+
+
+
+  </ul>
+
+  
+</nav>
+
+
+
+
+  
+
+  
+
+  <div class="m-main " id="main">
+    
+  
+    <section id="section-about-us" class>
+      
+
+
+
+
+<div class="m-info-boxes ">
+  <ul class="m-info-boxes__list">
+    
+      <li class="m-info-boxes__item">
+        
+
+        <div class="m-info-boxes__content">
+          <h2 class="m-heading m-info-boxes__title ">
+            Gdzie jesteśmy?
+          </h2>
+
+          <p class="m-info-boxes__description ">
+            
+              Trattoria Zacisze<br>
+            
+            Kolista 9<br>
+            03-664 Warszawa
+          </p>
+        </div>
+      </li>
+    
+    
+      <li class="m-info-boxes__item">
+        <div class="m-info-boxes__content">
+          
+
+          <h2 class="m-heading m-info-boxes__title ">
+            Zadzwoń do nas
+          </h2>
+
+          <p class="m-info-boxes__description ">
+            
+              <a href="tel:511467425" class="u-link-unstyled">511467425</a>
+              
+            
+          </p>
+        </div>
+      </li>
+    
+    <li class="m-info-boxes__item">
+      <div class="m-info-boxes__content">
+        
+
+        <h2 class="m-heading m-info-boxes__title ">
+          Godziny otwarcia
+        </h2>
+
+        <div class="m-info-boxes__description ">
+          
+
+
+
+
+
+
+<div class="m-restaurant-hours  js-restaurant-hours js-restaurant-hours-opening" data-restaurant-slug="trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9" data-active-classes data-inactive-classes>
+
+  <div class="m-restaurant-hours__item m-restaurant-hours__item--singular js-restaurant-hours-present-day">
+    <span class="m-restaurant-hours__header js-restaurant-hours-header">
+      Dzisiaj:&nbsp;
+    </span>
+    <span class="m-restaurant-hours__data-wrapper">
+      <span class="m-restaurant-hours__data js-restaurant-hours-data"></span>
+      
+        <button class="m-restaurant-hours__btn-popover js-restaurant-hours-btn-popover js-popover-advanced" data-trigger="focus" data-placement="auto top" data-container="body" data-target="#opening-hours-popover-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+          <i class="icon-info-sign"></i>
+        </button>
+      
+      
+        <button class="m-restaurant-hours__btn-collapse js-restaurant-hours-btn-collapse" data-toggle="collapse" data-target="#opening-hours-collapse-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+          <span class="icon-caret-up js-icon-caret-up hide"></span>
+          <span class="icon-caret-down js-icon-caret-down"></span>
+        </button>
+      
+    </span>
+    <span class="clearfix"></span>
+  </div>
+
+  <div class="js-restaurant-hours-all-days collapse" id="opening-hours-collapse-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+    
+      <div class="m-restaurant-hours__item js-restaurant-hours-day" data-day="1">
+        <span class="m-restaurant-hours__header js-restaurant-hours-header">
+          poniedziałek
+        </span>
+        <span class="m-restaurant-hours__data-wrapper">
+          <span class="m-restaurant-hours__data js-restaurant-hours-data">12:00 - 19:00</span>
+          
+            <button class="m-restaurant-hours__btn-popover js-restaurant-hours-btn-popover js-popover-advanced" data-trigger="focus" data-placement="auto top" data-container="body" data-target="#opening-hours-popover-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+              <i class="icon-info-sign"></i>
+            </button>
+          
+        </span>
+        <span class="clearfix"></span>
+      </div>
+    
+      <div class="m-restaurant-hours__item js-restaurant-hours-day" data-day="2">
+        <span class="m-restaurant-hours__header js-restaurant-hours-header">
+          wtorek
+        </span>
+        <span class="m-restaurant-hours__data-wrapper">
+          <span class="m-restaurant-hours__data js-restaurant-hours-data">12:00 - 19:00</span>
+          
+            <button class="m-restaurant-hours__btn-popover js-restaurant-hours-btn-popover js-popover-advanced" data-trigger="focus" data-placement="auto top" data-container="body" data-target="#opening-hours-popover-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+              <i class="icon-info-sign"></i>
+            </button>
+          
+        </span>
+        <span class="clearfix"></span>
+      </div>
+    
+      <div class="m-restaurant-hours__item js-restaurant-hours-day" data-day="3">
+        <span class="m-restaurant-hours__header js-restaurant-hours-header">
+          środa
+        </span>
+        <span class="m-restaurant-hours__data-wrapper">
+          <span class="m-restaurant-hours__data js-restaurant-hours-data">12:00 - 19:00</span>
+          
+            <button class="m-restaurant-hours__btn-popover js-restaurant-hours-btn-popover js-popover-advanced" data-trigger="focus" data-placement="auto top" data-container="body" data-target="#opening-hours-popover-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+              <i class="icon-info-sign"></i>
+            </button>
+          
+        </span>
+        <span class="clearfix"></span>
+      </div>
+    
+      <div class="m-restaurant-hours__item js-restaurant-hours-day" data-day="4">
+        <span class="m-restaurant-hours__header js-restaurant-hours-header">
+          czwartek
+        </span>
+        <span class="m-restaurant-hours__data-wrapper">
+          <span class="m-restaurant-hours__data js-restaurant-hours-data">12:00 - 19:00</span>
+          
+            <button class="m-restaurant-hours__btn-popover js-restaurant-hours-btn-popover js-popover-advanced" data-trigger="focus" data-placement="auto top" data-container="body" data-target="#opening-hours-popover-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+              <i class="icon-info-sign"></i>
+            </button>
+          
+        </span>
+        <span class="clearfix"></span>
+      </div>
+    
+      <div class="m-restaurant-hours__item js-restaurant-hours-day" data-day="5">
+        <span class="m-restaurant-hours__header js-restaurant-hours-header">
+          piątek
+        </span>
+        <span class="m-restaurant-hours__data-wrapper">
+          <span class="m-restaurant-hours__data js-restaurant-hours-data">12:00 - 20:00</span>
+          
+            <button class="m-restaurant-hours__btn-popover js-restaurant-hours-btn-popover js-popover-advanced" data-trigger="focus" data-placement="auto top" data-container="body" data-target="#opening-hours-popover-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+              <i class="icon-info-sign"></i>
+            </button>
+          
+        </span>
+        <span class="clearfix"></span>
+      </div>
+    
+      <div class="m-restaurant-hours__item js-restaurant-hours-day" data-day="6">
+        <span class="m-restaurant-hours__header js-restaurant-hours-header">
+          sobota
+        </span>
+        <span class="m-restaurant-hours__data-wrapper">
+          <span class="m-restaurant-hours__data js-restaurant-hours-data">12:00 - 20:00</span>
+          
+            <button class="m-restaurant-hours__btn-popover js-restaurant-hours-btn-popover js-popover-advanced" data-trigger="focus" data-placement="auto top" data-container="body" data-target="#opening-hours-popover-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+              <i class="icon-info-sign"></i>
+            </button>
+          
+        </span>
+        <span class="clearfix"></span>
+      </div>
+    
+      <div class="m-restaurant-hours__item js-restaurant-hours-day" data-day="7">
+        <span class="m-restaurant-hours__header js-restaurant-hours-header">
+          niedziela
+        </span>
+        <span class="m-restaurant-hours__data-wrapper">
+          <span class="m-restaurant-hours__data js-restaurant-hours-data">12:00 - 19:00</span>
+          
+            <button class="m-restaurant-hours__btn-popover js-restaurant-hours-btn-popover js-popover-advanced" data-trigger="focus" data-placement="auto top" data-container="body" data-target="#opening-hours-popover-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+              <i class="icon-info-sign"></i>
+            </button>
+          
+        </span>
+        <span class="clearfix"></span>
+      </div>
+    
+  </div>
+
+  
+    <div class="js-restaurant-hours-popover" style="display: none;" id="opening-hours-popover-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9-1621258569869182198000">
+  <strong class="pull-left js-restaurant-hours-popover-title"></strong>
+  <div class="pull-right m-popover__dismiss">
+    <button type="button" class="close js-dismiss-popover">×</button>
+  </div>
+  <div class="clearfix"></div>
+  <div class="js-restaurant-hours-popover-details"></div>
+  <div class="js-restaurant-hours-popover-info"></div>
+</div>
+
+  
+
+</div>
+
+        </div>
+      </div>
+    </li>
+
+    
+      <li class="m-info-boxes__item">
+        <div class="m-info-boxes__content">
+          
+
+          <h2 class="m-heading m-info-boxes__title ">
+            Zamów online
+          </h2>
+
+          <p class="m-info-boxes__action ">
+            <a href="/#section-menu" class="btn btn-primary">Zobacz menu</a>
+          </p>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+
+    </section>
+  
+
+
+
+  
+     <section class="m-section m-section--inner-padding-alt m-section-striped " id="section-info-box">
+      
+
+
+
+
+
+<div class="container">
+  <div class="m-info-box ">
+    
+      <div class="m-info-box__col m-info-box__col--media-last">
+        
+          
+  <picture class="u-block u-flex-grow">
+    <img class="m-info-box__image" src="images/26abaecf-7004-47c5-9aff-436e567d9467.jpg" alt loading="lazy">
+  </picture>
+  <picture class="u-block u-flex-grow">
+    <img class="m-info-box__image m-info-box__image--featured" src="images/21d7a3ec-da9d-45fb-8de1-094e9cfaa06d.jpg" alt loading="lazy">
+  </picture>
+
+
+        
+      </div>
+    
+    <div class="m-info-box__col ">
+      <div class="m-info-box__content ">
+        <div class="m-info-box__header">
+          <header class="m-page-subheader ">
+            <h2 class="m-page-subheader__heading">
+              <span class="m-page-subheader__sup-title">
+                Dowiedz się więcej
+              </span>
+              <span class="m-page-subheader__title ">
+                o naszej restauracji
+              </span>
+            </h2>
+          </header>
+        </div>
+
+        <div class="m-content-box m-info-box__description">
+          Trattoria to restauracja z autentycznymi daniami kuchni włoskiej, które są soczyste, wyraziste w smaku i przygotowywane z włoskich produktów.<br><br>Przykładamy wielką wagę do świeżości naszych dań, dlatego współpracujemy tylko z najlepszymi i zaufanymi hurtowniami, które dostarczają nam najwyższej jakości składniki potrzebne do naszych potraw.<br><br>W naszym lokalu panuje niezwykle sympatyczna i radosna atmosfera, a to zasługa dobrze zgranego zespołu, który stawia na rozwój, a jego pasją jest gastronomia. <br><br>
+        </div>
+
+        <p class="m-info-box__action">
+          <a href="/#section-menu" class="btn btn-primary btn-lg">Czytaj więcej</a>
+        </p>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+    </section>
+  
+
+
+
+
+
+
+  <section class="m-section m-section--inner-padding m-section-striped " id="section-menu">
+    <div class="container">
+      <header class="m-page-subheader m-page-subheader--center ">
+        <h2 class="m-page-subheader__heading">
+          <span class="m-page-subheader__sup-title">Dowiedz się więcej</span>
+          <span class="m-page-subheader__title">
+            O naszym menu
+          </span>
+        </h2>
+
+        <p class="m-page-subheader__description"></p>
+      </header>
+
+      <div class>
+        
+
+
+
+
+
+<div class="restaurant-menu">
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div class="m-flex-layout m-flex-layout--column m-flex-layout--gutter">
+    
+      <div class="m-flex-layout__aside ">
+        
+
+
+
+
+
+
+
+<nav class="m-group-nav js-toggle-group-nav m-group-nav--horizontal m-group-nav--not-mobile">
+  
+
+  
+  <ul class="m-group-nav__list  m-group-nav__list--horizontal">
+    
+      
+        <li class="m-group-nav__list-item">
+          <a href="#menu-pizzas" class="m-group-nav__link js-toggle-group-link is-active">
+            
+  
+    <img src="images/cee2fdc3d54a084de5c76f845d0864e5.png" alt class="m-group-nav__link-image u-rounded-circle">
+  
+
+
+            PIZZA
+            
+
+          </a>
+        </li>
+        
+      
+      
+        
+          <li class="m-group-nav__list-item js-dish-types-hours" data-id="318871">
+            <a href="#menu-przystawki" class="m-group-nav__link js-toggle-group-link ">
+              
+  
+    <img src="images/e75dee447286929d38f01f7d8855c6fa_1.png" alt class="m-group-nav__link-image u-rounded-circle">
+  
+
+
+              PRZYSTAWKI
+              
+
+            </a>
+          </li>
+          
+        
+      
+        
+          <li class="m-group-nav__list-item js-dish-types-hours" data-id="318872">
+            <a href="#menu-salatki" class="m-group-nav__link js-toggle-group-link ">
+              
+  
+    <img src="images/8123b3b2-2843-437b-a0ad-5aa6a3f80990.png" alt class="m-group-nav__link-image u-rounded-circle">
+  
+
+
+              SAŁATKI
+              
+
+            </a>
+          </li>
+          
+        
+      
+        
+          <li class="m-group-nav__list-item js-dish-types-hours" data-id="318874">
+            <a href="#menu-zupy" class="m-group-nav__link js-toggle-group-link ">
+              
+  
+    <img src="images/57459c716362757d99cf16654d577ad2.png" alt class="m-group-nav__link-image u-rounded-circle">
+  
+
+
+              ZUPY
+              
+
+            </a>
+          </li>
+          
+        
+      
+        
+          <li class="m-group-nav__list-item js-dish-types-hours" data-id="318892">
+            <a href="#menu-makarony" class="m-group-nav__link js-toggle-group-link ">
+              
+  
+    <img src="images/6fdcf9b919d7bb5d5a499bfe5e39836e.png" alt class="m-group-nav__link-image u-rounded-circle">
+  
+
+
+              MAKARONY
+              
+
+            </a>
+          </li>
+          
+        
+      
+        
+          <li class="m-group-nav__list-item js-dish-types-hours" data-id="318893">
+            <a href="#menu-dania-glowne" class="m-group-nav__link js-toggle-group-link ">
+              
+  
+    <img src="images/28a8f3035fb8c713f1cbbdec53e01389.png" alt class="m-group-nav__link-image u-rounded-circle">
+  
+
+
+              DANIA GŁÓWNE
+              
+
+            </a>
+          </li>
+          
+        
+      
+        
+          <li class="m-group-nav__list-item js-dish-types-hours" data-id="318897">
+            <a href="#menu-desery" class="m-group-nav__link js-toggle-group-link ">
+              
+  
+    <img src="images/216487915a69c26a8b6f263c1d16f63b.png" alt class="m-group-nav__link-image u-rounded-circle">
+  
+
+
+              DESERY
+              
+
+            </a>
+          </li>
+          
+        
+      
+
+      
+    
+
+    
+  </ul>
+</nav>
+
+      </div>
+    
+
+    <div class="m-flex-layout__content">
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="m-group m-group--full-width js-group" data-mode="tab">
+  <div class="m-group__list js-toggle-group-nav">
+    <div class="js-restaurant-hours" data-restaurant-slug="trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9">
+      
+        
+          <h3 class="m-group__header restaurant-menu__dish-group-name m-group__header--mobile">
+            <a href="#menu-pizzas" class="m-group__header-link js-toggle-group-link is-active">
+              
+                <img src="images/cee2fdc3d54a084de5c76f845d0864e5_1.png" alt class="m-group__header-image u-rounded-circle">
+              
+              <span class="m-group__header-text">PIZZA</span>
+              <span class="m-group__toggle-icon"></span>
+            </a>
+          </h3>
+          <div id="menu-pizzas" class="m-group__list-item js-group-item m-group__list-item--tab is-active">
+            <div class="m-list m-list--list m-list--header m-list--no-gutter">
+  
+
+  
+
+  <div class="m-list__list">
+    <div class="m-list__item m-list__item--header ">
+      <div class="m-item m-item--list">
+        <div class="m-item__row m-item__row--header">
+          <div class="m-item__col-header">
+            
+              <div class="pie-choice hidden js-dough-select" data-value="1"></div>
+            
+          </div>
+          
+            <div class="m-item__col-group-info m-item__col-group-info--secondary m-item__col-group-info--size-info">
+              <div class="m-item__size-info">
+                
+                  
+                    <span>Standardowa </span> 
+                  
+                  
+                
+              </div>
+            </div>
+          
+
+          <div class="m-item__col m-item__col--secondary">
+            
+              
+              <button type="button" class=" m-item__col-dummy-filler" disabled>
+                Do koszyka <span class="caret"></span>
+              </button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="m-list m-list--list m-list--no-gutter">
+  <ul class="m-list__list">
+    
+      
+      
+      
+      
+      
+      
+
+<li class="m-list__item ">
+  <div class="m-item m-item--list pizza">
+    <div class="m-item__row ">
+      
+        <div class="m-item__image-aside">
+          <img src="images/b3ee30786817f7c6ae85bb2890024a0e.png" alt>
+        </div>
+      
+
+      <div class="m-item__col-header">
+        <div>
+          
+
+          <div class="m-item__header">
+            <h4 class="m-item__title restaurant-menu__dish-name">
+              Własna pizza
+            </h4>
+          </div>
+        </div>
+        <div class="m-item__description">
+          <span class="muted"></span>
+        </div>
+      </div>
+
+      
+        
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+        
+          <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+            <span title="Standardowa  ( cm) jest dostępna" class="icon-ok text-success js-tooltip-advanced"></span>
+            <div></div>
+            <div class="m-item__price u-dummy-filler" aria-hidden="true">21,00 zł</div>
+          </div>
+        
+      
+  
+  
+
+
+      
+
+      <div class="m-item__col m-item__col--secondary actions">
+        <div class="btn-group">
+          <button type="button" class="btn add-button js-add-to-cart-button u-progress" data-type="create-pizza" disabled data-ga-action="Create pizza (clicks on the creator button)">
+            Stwórz
+          </button>
+        </div>
+        
+          
+          <div></div>
+          <button type="button" class=" m-item__col-dummy-filler" disabled>
+            Do koszyka <span class="caret"></span>
+          </button>
+        
+      </div>
+    </div>
+  </div>
+</li>
+
+    
+    
+      
+      
+      
+      
+      
+
+<li class="m-list__item ">
+  <div class="m-item m-item--list pizza">
+    <div class="m-item__row ">
+      
+        <div class="m-item__image-aside">
+          <img src="images/afa354ec52c17aed5a3564da0eb3e2f3.png" alt>
+        </div>
+      
+
+      <div class="m-item__col-header">
+        <div>
+          
+
+          <div class="m-item__header">
+            <h4 class="m-item__title restaurant-menu__dish-name">
+              Pizza pół na pół
+            </h4>
+          </div>
+        </div>
+        <div class="m-item__description">
+          <span class="muted"></span>
+        </div>
+      </div>
+
+      
+        
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+        
+          <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+            
+              <span title="Standardowa  ( cm) jest dostępna" class="icon-ok text-success js-tooltip-advanced"></span>
+            
+            <div></div>
+            <div class="m-item__price u-dummy-filler" aria-hidden="true">21,00 zł</div>
+          </div>
+        
+      
+  
+  
+
+
+      
+
+      <div class="m-item__col m-item__col--secondary actions">
+        <div class="btn-group">
+          <button type="button" class="btn add-button js-add-to-cart-button u-progress" data-type="create-split-pizza" disabled data-ga-action="Create split pizza (split pizza creator button)">
+            Stwórz
+          </button>
+        </div>
+        
+          
+          <div></div>
+          <button type="button" class=" m-item__col-dummy-filler" disabled>
+            Do koszyka <span class="caret"></span>
+          </button>
+        
+      </div>
+    </div>
+  </div>
+</li>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026761">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA MARGHERITA
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">21,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026761, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026762">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA FUNGHI
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted">SOS BIAŁY, PIECZARKI, OLIWKI</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">22,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026762, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026763">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA CAPRICIOSA 
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY,  SZYNKA, PIECZARKI</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">28,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026763, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026764">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA SALAME
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY, SALAMI</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">25,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026764, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza highlight-2" data-pizza-id="2026765">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header u-va-top">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <div class="m-item__special">
+                    
+
+  <span class="label label-info label-dish">Szef kuchni poleca</span>
+
+
+
+
+                  </div>
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA DIAVOLO
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY, SALAMI,  SZYNKA, PAPRYCZKI JALAPENO, TABASCO</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">26,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026765, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026766">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA PROSCIUTTO
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY, SZYNKA PARMEŃSKA, RUKOLA, POMIDORKI CHERRY, PARMEZAN</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">29,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026766, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026767">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA HAWAJSKA
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY,  SZYNKA, ANANAS</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">27,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026767, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026768">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA QUATTRO FORMAGGI 
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted">SOS BIAŁY,  SER MOZZARELLA, GORGONZOLA, PARMEZAN, CAMEMBERT</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">28,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026768, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026769">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA POLO Z JALAPENO
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted">SOS BIAŁY,  SER MOZZARELLA,  KURCZAK, PAPRYCZKI JALAPENO</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">26,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026769, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026770">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA WIEJSKA
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY,  SZYNKA, BOCZEK, KIEŁBASA, PAPRYKA, CEBULA, KUKURYDZA</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">28,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026770, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026771">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA VEGETARIANA
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY, PAPRYKA, CEBULA, KUKURYDZA, SUSZONE POMIDORY</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">24,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026771, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026772">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA GRECKA
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY, OLIWKI, CEBULA, SER FETA, POMIDOR</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">26,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026772, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026773">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA CARBONARA 
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY, BOCZEK,  CZERWONA CEBULA, JAJKO</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">26,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026773, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza highlight-1" data-pizza-id="2026774">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header u-va-top">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <div class="m-item__special">
+                    
+  <span class="label label-success label-dish">Nowość</span>
+
+
+
+
+
+                  </div>
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA SALMONE
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS POMIDOROWY, ŁOSOŚ, KAPARY, CEBULA</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">29,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026774, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list pizza " data-pizza-id="2026775">
+          <div class="m-item__row ">
+            
+            
+            
+
+            
+            
+            
+            <div class="m-item__col-header ">
+              <div>
+                
+
+                <div class="m-item__header">
+                  
+                  <h4 class="m-item__title restaurant-menu__dish-name">
+                    PIZZA ZACISZE 
+                    
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                    
+
+                  </h4>
+                </div>
+              </div>
+              <div class="m-item__description">
+                <span class="muted"> SER MOZZARELLA, SOS BIAŁY, KOZI SER, CUKINIA, PAPRYCZKI JALAPENO, MIÓD</span>
+                
+              </div>
+            </div>
+
+            
+  <div class="u-clear-both visible-xs-block"></div>
+  
+  
+    
+      <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+        <span class="m-item__price js-tooltip-advanced" title="Standardowa  ( cm)">27,00 zł</span>
+        <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Pizza', id: 2026775, size: 0}">
+          <span class="m-item__badge count"></span>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+            <div class="m-item__col m-item__col--secondary actions">
+              
+                
+                
+                  <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-pizza" data-size="0">
+                    
+                      Do koszyka
+                    
+                  </button>
+                
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+
+          </div>
+          
+        
+
+        
+          
+            <h3 class="m-group__header restaurant-menu__dish-group-name m-group__header--mobile js-dish-types-hours" data-id="318871">
+              <a href="#menu-przystawki" class="m-group__header-link js-toggle-group-link ">
+                
+                  <img src="images/e75dee447286929d38f01f7d8855c6fa.png" alt class="m-group__header-image u-rounded-circle">
+                
+                <span class="m-group__header-text">PRZYSTAWKI</span>
+                <span class="m-group__toggle-icon"></span>
+              </a>
+            </h3>
+            <div id="menu-przystawki" class="m-group__list-item js-group-item m-group__list-item--tab ">
+              <div class="m-list m-list--list m-list--no-gutter">
+  
+
+  
+
+  <ul class="m-list__list">
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">FRYTKI
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092768">
+                <i class="icon-shopping-cart"></i> 5,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092768}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish highlight-2">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header u-va-top">
+              
+
+              <div class="m-item__header">
+                
+                <div class="m-item__special">
+                  
+
+  <span class="label label-info label-dish">Szef kuchni poleca</span>
+
+
+
+
+                  
+
+                </div>
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">FOCACCIA
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092771">
+                <i class="icon-shopping-cart"></i> 9,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092771}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">PALUSZKI GRISINI Z SZYNKĄ PARMEŃSKĄ
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092775">
+                <i class="icon-shopping-cart"></i> 12,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092775}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+
+            </div>
+            
+          
+        
+          
+            <h3 class="m-group__header restaurant-menu__dish-group-name m-group__header--mobile js-dish-types-hours" data-id="318872">
+              <a href="#menu-salatki" class="m-group__header-link js-toggle-group-link ">
+                
+                  <img src="images/8123b3b2-2843-437b-a0ad-5aa6a3f80990_1.png" alt class="m-group__header-image u-rounded-circle">
+                
+                <span class="m-group__header-text">SAŁATKI</span>
+                <span class="m-group__toggle-icon"></span>
+              </a>
+            </h3>
+            <div id="menu-salatki" class="m-group__list-item js-group-item m-group__list-item--tab ">
+              <div class="m-list m-list--list m-list--no-gutter">
+  
+
+  
+
+  <ul class="m-list__list">
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">SAŁATKA  WEGETARIAŃSKA
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"> Z KARMELIZOWANĄ GRUSZKĄ, MIXEM SAŁAT, SOSEM VINEGRET, PESTKAMI SŁONECZNIKA, POMIDORKAMI CHERRY<br></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092777">
+                <i class="icon-shopping-cart"></i> 24,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092777}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">SAŁATKA GRECKA
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted">MIX SAŁAT, SOS VINEGRET, SER FETA, CZERWONA CEBULA, POMIDORKI CHERRY, OGÓREK<br></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092779">
+                <i class="icon-shopping-cart"></i> 22,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092779}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish highlight-3">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header u-va-top">
+              
+
+              <div class="m-item__header">
+                
+                <div class="m-item__special">
+                  
+
+
+  <span class="label label-discount label-dish">Oferta specjalna</span>
+
+
+
+                  
+
+                </div>
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">MIX SAŁAT Z GRILLOWANYM KURCZAKIEM 
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"> I BOCZKIEM, PARMEZANEM I SOSEM VINEGRET<br></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092781">
+                <i class="icon-shopping-cart"></i> 25,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092781}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+
+            </div>
+            
+          
+        
+          
+            <h3 class="m-group__header restaurant-menu__dish-group-name m-group__header--mobile js-dish-types-hours" data-id="318874">
+              <a href="#menu-zupy" class="m-group__header-link js-toggle-group-link ">
+                
+                  <img src="images/57459c716362757d99cf16654d577ad2_1.png" alt class="m-group__header-image u-rounded-circle">
+                
+                <span class="m-group__header-text">ZUPY</span>
+                <span class="m-group__toggle-icon"></span>
+              </a>
+            </h3>
+            <div id="menu-zupy" class="m-group__list-item js-group-item m-group__list-item--tab ">
+              <div class="m-list m-list--list m-list--no-gutter">
+  
+
+  
+
+  <ul class="m-list__list">
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">KREM POMIDOROWY Z PESTO
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092795">
+                <i class="icon-shopping-cart"></i> 12,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092795}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">ROSÓŁ Z MAKARONEM
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092796">
+                <i class="icon-shopping-cart"></i> 9,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092796}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish highlight-1">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header u-va-top">
+              
+
+              <div class="m-item__header">
+                
+                <div class="m-item__special">
+                  
+  <span class="label label-success label-dish">Nowość</span>
+
+
+
+
+
+                  
+
+                </div>
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">FLAKI
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092798">
+                <i class="icon-shopping-cart"></i> 16,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092798}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+
+            </div>
+            
+          
+        
+          
+            <h3 class="m-group__header restaurant-menu__dish-group-name m-group__header--mobile js-dish-types-hours" data-id="318892">
+              <a href="#menu-makarony" class="m-group__header-link js-toggle-group-link ">
+                
+                  <img src="images/6fdcf9b919d7bb5d5a499bfe5e39836e_1.png" alt class="m-group__header-image u-rounded-circle">
+                
+                <span class="m-group__header-text">MAKARONY</span>
+                <span class="m-group__toggle-icon"></span>
+              </a>
+            </h3>
+            <div id="menu-makarony" class="m-group__list-item js-group-item m-group__list-item--tab ">
+              <div class="m-list m-list--list m-list--no-gutter">
+  
+
+  
+
+  <ul class="m-list__list">
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">SPAGHETTI BOLOGNESE
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted">(SOS POMIDOROWY, MIĘSO WOŁOWO-WIEPRZOWE, ZIOŁA, NATKA PIETRUSZKI)<br></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092939">
+                <i class="icon-shopping-cart"></i> 24,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092939}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish highlight-2">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header u-va-top">
+              
+
+              <div class="m-item__header">
+                
+                <div class="m-item__special">
+                  
+
+  <span class="label label-info label-dish">Szef kuchni poleca</span>
+
+
+
+
+                  
+
+                </div>
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">TAGLIATELLE Z KURCZAKIEM I PODGRZYBKAMI 
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted">(KURCZAK, PODGRZYBKI, OLIWA, CZOSNEK, ŚMIETANA, NATKA PIETRUSZKI, PARMEZAN)<br></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092940">
+                <i class="icon-shopping-cart"></i> 27,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092940}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">TAGLIATELLE Z ŁOSOSIEM I ŚWIEŻYM SZPINAKIEM
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted">(ŚWIEŻE LIŚCIE SZPINAKU, ŁOSOŚ, ŚMIETANA, CZOSNEK, OLIWA)<br></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092943">
+                <i class="icon-shopping-cart"></i> 28,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092943}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">SPAGHETTI CARBONARA
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted">(CZOSNEK, CEBULA, BOCZEK , ŚMIETANA, JAJKO, SER GRANA PADANO, NATKA PIETRUSZKI)<br></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092944">
+                <i class="icon-shopping-cart"></i> 26,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092944}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+
+            </div>
+            
+          
+        
+          
+            <h3 class="m-group__header restaurant-menu__dish-group-name m-group__header--mobile js-dish-types-hours" data-id="318893">
+              <a href="#menu-dania-glowne" class="m-group__header-link js-toggle-group-link ">
+                
+                  <img src="images/28a8f3035fb8c713f1cbbdec53e01389_1.png" alt class="m-group__header-image u-rounded-circle">
+                
+                <span class="m-group__header-text">DANIA GŁÓWNE</span>
+                <span class="m-group__toggle-icon"></span>
+              </a>
+            </h3>
+            <div id="menu-dania-glowne" class="m-group__list-item js-group-item m-group__list-item--tab ">
+              <div class="m-list m-list--list m-list--no-gutter">
+  
+
+  
+
+  <ul class="m-list__list">
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">BURGER FIRMOWY
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted">(200G WOŁOWINY, SER CHEDDAR, POMIDOR, OGÓREK, SAŁATA, SOS PIKLOWY)<br></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092947">
+                <i class="icon-shopping-cart"></i> 29,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092947}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">POLĘDWICZKI WIEPRZOWE W SOSIE GRZYBOWYM
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted">Z GNOCCHI I MIXEM SAŁAT</span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092950">
+                <i class="icon-shopping-cart"></i> 34,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092950}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish highlight-2">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header u-va-top">
+              
+
+              <div class="m-item__header">
+                
+                <div class="m-item__special">
+                  
+
+  <span class="label label-info label-dish">Szef kuchni poleca</span>
+
+
+
+
+                  
+
+                </div>
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name"> FASZEROWANA PIERŚ Z KURCZAKA  
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted">Z FRYTKAMI, WARZYWA Z WODY</span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092951">
+                <i class="icon-shopping-cart"></i> 32,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092951}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">SZNYCEL WIEPRZOWY
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"> Z MIXEM SAŁAT I FRYTKAMI</span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092954">
+                <i class="icon-shopping-cart"></i> 36,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092954}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">GNOCCHI Z KURCZAKIEM I PARMEZANEM
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092955">
+                <i class="icon-shopping-cart"></i> 27,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092955}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish highlight-2">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header u-va-top">
+              
+
+              <div class="m-item__header">
+                
+                <div class="m-item__special">
+                  
+
+  <span class="label label-info label-dish">Szef kuchni poleca</span>
+
+
+
+
+                  
+
+                </div>
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">NUGGETSY Z KURCZAKA Z MIZERIĄ I FRYTKAMI
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092956">
+                <i class="icon-shopping-cart"></i> 26,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092956}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+
+            </div>
+            
+          
+        
+          
+            <h3 class="m-group__header restaurant-menu__dish-group-name m-group__header--mobile js-dish-types-hours" data-id="318897">
+              <a href="#menu-desery" class="m-group__header-link js-toggle-group-link ">
+                
+                  <img src="images/216487915a69c26a8b6f263c1d16f63b_1.png" alt class="m-group__header-image u-rounded-circle">
+                
+                <span class="m-group__header-text">DESERY</span>
+                <span class="m-group__toggle-icon"></span>
+              </a>
+            </h3>
+            <div id="menu-desery" class="m-group__list-item js-group-item m-group__list-item--tab ">
+              <div class="m-list m-list--list m-list--no-gutter">
+  
+
+  
+
+  <ul class="m-list__list">
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish ">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header ">
+              
+
+              <div class="m-item__header">
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">TIRAMISU
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092981">
+                <i class="icon-shopping-cart"></i> 12,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092981}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="m-list__item ">
+        <div class="m-item m-item--list dish highlight-3">
+          <div class="m-item__row ">
+            
+            
+
+            
+            
+
+            
+
+            
+
+            <div class="m-item__col-header u-va-top">
+              
+
+              <div class="m-item__header">
+                
+                <div class="m-item__special">
+                  
+
+
+  <span class="label label-discount label-dish">Oferta specjalna</span>
+
+
+
+                  
+
+                </div>
+                
+
+                <h4 class="m-item__title restaurant-menu__dish-name">SZARLOTKA
+                  
+<span class="dish-icons">
+  
+  
+  
+  
+  
+  
+
+  
+</span>
+
+                  
+
+                </h4>
+              </div>
+
+              <div class="m-item__description">
+                <span class="muted"></span>
+              </div>
+            </div>
+
+            <div class="m-item__col m-item__col--secondary actions">
+              <button type="button" class="btn add-button js-add-to-cart-button u-progress" disabled data-type="add-dish" data-dish-id="3092982">
+                <i class="icon-shopping-cart"></i> 14,00 zł
+                &nbsp;
+                <span style="display: none;" class="m-item__cart-count" data-cart-badge="{type: 'Dish', id: 3092982}">
+                  <span class="m-item__badge m-item__badge--inside count"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+
+            </div>
+            
+          
+        
+
+        
+      
+      
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="m-section m-section--inner-padding m-section-striped " id="section-reviews">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="m-testimonials ">
+  <div class="container">
+    
+      <header class="m-page-subheader m-page-subheader--center ">
+        <h2 class="m-page-subheader__heading">
+          <span class="m-page-subheader__sup-title">
+            Sprawdź co mówią o nas
+          </span>
+          <span class="m-page-subheader__title">
+            Zadowoleni klienci
+          </span>
+        </h2>
+        <p class="m-page-subheader__description">
+          99,2% klientów jest z nas zadowolonych!
+        </p>
+        <p class="m-page-subheader__description">
+          <a href="/opinie" class="btn btn-link ">Zobacz wszystkie opinie</a>
+        </p>
+      </header>
+    
+    <div class>
+      <div class="m-section m-section--bottom js-slider">
+        <div class="m-testimonials__list  js-slider__list" data-slick="{"autoplay": true}" data-responsive="{"xsmall": 1, "small": 3}">
+          
+            <article class="m-testimonials__item">
+              <p class="m-testimonials__content">
+                
+                  Dostawa na czas, dobre sosy.
+                
+              </p>
+
+              <footer class="m-testimonials__footer">
+                <p class="m-heading m-testimonials__author ">
+                  Tomek
+                  
+                </p>
+
+                
+              </footer>
+            </article>
+          
+            <article class="m-testimonials__item">
+              <p class="m-testimonials__content">
+                
+                  Wszystko było pyszne , następnym razem na pewno spróbuje Państwa pyszne makarony 😉😁
+                
+              </p>
+
+              <footer class="m-testimonials__footer">
+                <p class="m-heading m-testimonials__author ">
+                  Barbara
+                  
+                </p>
+
+                
+              </footer>
+            </article>
+          
+            <article class="m-testimonials__item">
+              <p class="m-testimonials__content">
+                
+                  Zamawialam po raz pierwszy i jestem mile zaskoczona, pizza była bardzo smaczna. Polecam serdecznie 
+                
+              </p>
+
+              <footer class="m-testimonials__footer">
+                <p class="m-heading m-testimonials__author ">
+                  Barbara
+                  
+                </p>
+
+                
+              </footer>
+            </article>
+          
+        </div>
+
+        
+          <div class="m-testimonials__indicators">
+            <div class="m-indicators m-indicators--center">
+              <div class="m-indicators__dots js-slider__indicators" data-class-prefix="m-indicators"></div>
+            </div>
+          </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+  </section>
+
+
+
+  <section class="m-section m-section--inner-padding m-section-striped " id="section-gallery">
+    
+
+
+
+
+  <div class="m-advanced-layout">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 m-advanced-layout__col-primary">
+          <div class="m-advanced-layout__content-wrapper ">
+            <header class="m-page-subheader">
+              <h2 class="m-page-subheader__heading">
+                <span class="m-page-subheader__sup-title">
+                  Zobacz nasze
+                </span>
+                <span class="m-page-subheader__title">
+                  Potrawy 
+                </span>
+              </h2>
+            </header>
+
+            <div class="m-advanced-layout__content m-advanced-layout__content--cols">
+              Nasi wykwalifikowani kucharze przyrządzą dla Was wybitne dania bogate w przyprawy, a obsługa zadba o każdy szczegół tak aby umilić Wam pobyt w naszej restauracji. 
+            </div>
+
+            <ul class="m-advanced-layout__media-list">
+              
+                <li class="m-advanced-layout__media-list-item">
+                  
+                  <a href="https://restaumatic.imgix.net/uploads/accounts/36535/media_library/37882269-79ca-48e3-a4a3-eb4bf3fbf264.jpg?auto=compress&amp;blur=0&amp;crop=focalpoint&amp;fit=max&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=auto&amp;rect=0%2C0%2C1197%2C900&amp;w=1920" class="m-overlay u-link-wrapper m-advanced-layout__item" data-lightbox="home-gallery-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9">
+                    <picture class="m-overlay__item">
+                      <img class="m-advanced-layout__item-image" src="images/37882269-79ca-48e3-a4a3-eb4bf3fbf264.jpg" alt loading="lazy">
+                    </picture>
+                    <p class="m-overlay__content">
+                      <span class="icon-search m-overlay__icon" aria-hidden="true"></span>
+                    </p>
+                  </a>
+                </li>
+              
+                <li class="m-advanced-layout__media-list-item">
+                  
+                  <a href="https://restaumatic.imgix.net/uploads/accounts/36535/media_library/b82f1141-1403-4b2f-8d26-a1be32f5d558.jpg?auto=compress&amp;blur=0&amp;crop=focalpoint&amp;fit=max&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=auto&amp;rect=377%2C0%2C1622%2C1333&amp;w=1920" class="m-overlay u-link-wrapper m-advanced-layout__item" data-lightbox="home-gallery-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9">
+                    <picture class="m-overlay__item">
+                      <img class="m-advanced-layout__item-image" src="images/b82f1141-1403-4b2f-8d26-a1be32f5d558.jpg" alt loading="lazy">
+                    </picture>
+                    <p class="m-overlay__content">
+                      <span class="icon-search m-overlay__icon" aria-hidden="true"></span>
+                    </p>
+                  </a>
+                </li>
+              
+                <li class="m-advanced-layout__media-list-item">
+                  
+                  <a href="https://restaumatic.imgix.net/uploads/accounts/36535/media_library/279c82c7-d2b4-4b08-bf5b-a03ba624503b.jpg?auto=compress&amp;blur=0&amp;crop=focalpoint&amp;fit=max&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=auto&amp;rect=165%2C0%2C1185%2C900&amp;w=1920" class="m-overlay u-link-wrapper m-advanced-layout__item" data-lightbox="home-gallery-trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9">
+                    <picture class="m-overlay__item">
+                      <img class="m-advanced-layout__item-image" src="images/279c82c7-d2b4-4b08-bf5b-a03ba624503b.jpg" alt loading="lazy">
+                    </picture>
+                    <p class="m-overlay__content">
+                      <span class="icon-search m-overlay__icon" aria-hidden="true"></span>
+                    </p>
+                  </a>
+                </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+        
+          <div class="col-sm-4 hidden-xs">
+            <img class="m-advanced-layout__featured-image " src="images/c11a743d-b642-4b00-9d7c-4339440bd4ad.jpg" alt loading="lazy">
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  
+<section class="m-section m-section--top m-section-striped " id="section-contact">
+  <header class="m-page-subheader m-page-subheader--center ">
+    <h2 class="m-page-subheader__heading">
+      <span class="m-page-subheader__sup-title">
+        Masz pytania?
+      </span>
+      <span class="m-page-subheader__title">
+        Skontaktuj się z nami
+      </span>
+    </h2>
+    <p class="m-page-subheader__description">
+      Napisz lub zadzwoń do nas!
+    </p>
+  </header>
+
+  <div class="m-map m-map--one-page-section ">
+    <iframe class="m-map__embed" src="place.html" loading="lazy"></iframe>
+
+  </div>
+</section>
+
+
+
+
+    
+
+
+
+<footer class="m-footer">
+  <div class="container">
+    
+
+  <div class="m-footer__content m-footer__content--main " data-restaurant-visible="trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9">
+  <div class="m-footer__cols " data-restaurant-visible="trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9">
+    <div class="m-footer__col m-footer__col--logo">
+      <a href="/">
+        <img src="images/1607332650.png" class="m-footer__logo-img" alt="Trattoria Zacisze">
+      </a>
+    </div>
+    <div class="m-footer__col">
+      
+        Kolista 9, 03-664 Warszawa
+      
+      
+        <br>
+        Telefon:
+        
+          <a href="tel:511467425" class="u-link-unstyled" data-ga-action="Phone in the footer clicks">511467425</a>
+        
+      
+      
+        <br>
+        E-mail: <a href="mailto:trattoriazacisze@gmail.com" class="u-link-unstyled">trattoriazacisze@gmail.com</a>
+      
+      
+        <br>
+        <a href="/kontakt" class="m-footer__link">Mapa dojazdu</a>
+      
+    </div>
+    
+      <div class="m-footer__col">
+        <p class="u-mb5">
+          Obserwuj nas na:
+        </p>
+        
+
+
+  
+  
+  
+  
+  <div class="m-icon-group">
+    <ul class="m-icon-group__list">
+      
+        <li class="m-icon-group__list-item">
+          <a href="https://www.facebook.com/Trattoria-Zacisze-115557560316270/?ref=page_internal" title="Facebook" class="btn btn-primary m-icon-group__item" target="_blank" rel="noopener noreferrer">
+            <span class="icon-facebook" aria-hidden="true"></span>
+          </a>
+        </li>
+      
+      
+      
+      
+    </ul>
+  </div>
+  
+
+
+
+
+      </div>
+    
+
+    <div class="m-footer__col">
+      <p class="u-mb6 u-optional-content">Gotówka, karta lub szybki przelew</p>
+
+      <p class="u-mb0">
+        <a href="/restauracja/trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9" class="btn btn-primary btn-block">
+          Zamów online
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+    
+
+    
+
+    
+
+
+    <small class="m-footer__content m-footer__content--small d-flex">
+      <span class="m-footer-info__terms">
+        <a href="/terms" class="m-footer__link" rel="nofollow">Regulamin</a>
+| <a href="/privacy-policy" class="m-footer__link" rel="nofollow">Polityka prywatności</a>
+| <a href="/zgody-marketingowe" class="m-footer__link" rel="nofollow">Zgody marketingowe</a>
+
+
+      </span>
+      
+        <span class="m-footer-info__info">
+          <span class="visible-xs-inline">Zamówienia online</span><span class="hidden-xs">Uruchom zamówienia online w swojej restauracji!</span>
+<a href="//www.restaumatic.com/pl" class="m-footer__link u-text-decoration-none" target="_parent" data-ga-action="Clicks on the Restaumatic link in the footer" rel="nofollow">
+  &nbsp;
+  <svg width="130" height="26" class="svg-icon-restaumatic u-va-middle">
+    <use xlink:href="#svg-icon-restaumatic"/>
+  </svg>
+</a>
+
+        </span>
+      
+    </small>
+  </div>
+</footer>
+
+  </div>
+
+
+
+
+
+
+  
+    
+
+
+
+  
+  <div class="modal fade" id="progress" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-centered">
+          <h5 class="progress-message"> </h5>
+        </div>
+        <div class="progress progress-striped progress-success active">
+          <div class="progress-bar">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <aside class="cookie-warning hide">
+  <p class="cookie-warning__inner u-mb0">
+    Strona korzysta z plików cookies w celu realizacji usług. Możesz określić warunki przechowywania lub dostępu do plików cookies w Twojej przeglądarce.
+    <button type="button" class="btn btn-sm btn-light cookie-warning__btn">Rozumiem</button>
+  </p>
+</aside>
+
+  
+
+
+
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Restaurant",
+    "@id": "https://www.trattoriazacisze.pl/restauracja/trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9",
+    "name": "Trattoria Zacisze",
+    "description": "Trattoria Zacisze  - Zamów przez internet, zapłac gotówką lub online, dowieziemy do domu i biura",
+    "telephone": "511467425",
+    "url": "https://www.trattoriazacisze.pl/restauracja/trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9",
+    "menu": "https://www.trattoriazacisze.pl/restauracja/trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9",
+    "image": "https://www.trattoriazacisze.pl/https://restaumatic.imgix.net/uploads/restaurants/40099/logo/1607332650.png?auto=compress&crop=focalpoint&fit=clip&h=500&w=500",
+    "logo": "https://www.trattoriazacisze.pl/https://restaumatic.imgix.net/uploads/restaurants/40099/logo/1607332650.png?auto=compress&crop=focalpoint&fit=clip&h=500&w=500",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Warszawa",
+      "addressRegion": "",
+      "postalCode": "03-664",
+      "streetAddress": "Kolista 9",
+      "addressCountry": "PL"
+    },
+    "openingHours": ["Mo 12:00-19:00","Tu 12:00-19:00","We 12:00-19:00","Th 12:00-19:00","Fr 12:00-20:00","Sa 12:00-20:00","Su 12:00-19:00"],
+    "servesCuisine": [
+      "Pizza","Sałatki","Zupy","Desery","Burgery","Kuchnia Włoska"
+    ],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "52.287594",
+      "longitude": "21.06113"
+    },
+    "potentialAction": {
+      "@type": "OrderAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.trattoriazacisze.pl/restauracja/trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9",
+        "contentType": "text/html",
+        "inLanguage": "pl",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "deliveryMethod": [
+        "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet","http://purl.org/goodrelations/v1#DeliveryModePickUp"
+      ],
+      "priceSpecification": {
+        "@type": "DeliveryChargeSpecification",
+        "appliesToDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
+        "priceCurrency": "PLN",
+        "price": 0,
+        "eligibleTransactionVolume": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "PLN",
+          "price": 45.0
+        }
+      }
+    }
+  }
+  </script>
+
+
+
+  
+
+
+
+  <div class="modal fade creator" id="creator" tabindex="-1" role="dialog">
+</div>
+
+  <div class="js-dish-creator"> </div>
+
+
+  <template id="allergens-popover" style="display: none;">
+  <div class="js-content"></div>
+  <div class="u-text-center">
+    <button class="btn btn-link u-font-size-inherit" type="button" data-target="#allergens-modal" data-toggle="modal">Oznaczenia alergenów</button>
+  </div>
+</template>
+
+<div class="modal fade" id="allergens-modal" tabindex="-1" role="dialog" aria-labelledby="allergens-modal__title">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="allergens-modal__title">Oznaczenia alergenów</h4>
+      </div>
+      <div class="modal-body">
+        <ol>
+<li>Gluten</li>
+<li>Skorupiaki</li>
+<li>Jaja</li>
+<li>Ryby</li>
+<li>Orzeszki ziemne</li>
+<li>Soja</li>
+<li>Mleko</li>
+<li>Orzechy</li>
+<li>Seler</li>
+<li>Musztarda</li>
+<li>Sezam</li>
+<li>Dwutlenek siarki</li>
+<li>Łubin</li>
+<li>Mięczaki</li>
+</ol>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <aside class="m-floating-action m-floating-action--cart-toggle js-fab">
+  <button type="button" class="m-floating-action__btn js-cart-button" data-bind="click: toggleCart" data-placement="top-left">
+    <i class="icon-shopping-cart"></i>
+    <span class="m-floating-action__badge" data-cart="item_count"></span>
+  </button>
+</aside>
+
+  
+
+
+
+
+
+<script id="address_not_found_msg" type="text/html">
+<div>
+  <h4>Niepoprawny adres!</h4>
+  <br/>
+  <p><i class='icon-alert-sign'></i> Sprawdź czy miasto i ulica się zgadza!</p>
+</div>
+</script>
+
+<div class="modal fade" id="error" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h3 id="error_title"></h3>
+      </div>
+      <div class="modal-body">
+        <div class="error">
+          <div id="error_msg" class="text-centered"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn btn-primary">Ok</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="notification js-notify" style="display: none" role="alert" data-notify-key="notification-cms/pages/143219-20201207090815436423000/cms/page/translations/291330-20201207090815345860000" data-expiration>
+   <button type="button" class="notification__close js-notify-close" title="Zamknij"><span aria-hidden="true">&times;</span></button>
+   <div class="container">
+    <span class="icon-info-sign icon-base" aria-hidden="true"></span> Nowość!
+    <button class="notification__btn js-notify-close" type="button" data-toggle="modal" data-target="#notification_modal">
+      Więcej <span class="icon-angle-right" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+
+<div class="modal fade" id="notification_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3 class="modal-title">Nowość!</h3>
+      </div>
+
+      <div class="modal-body">
+        <div class="wysiwyg-text-align-center">Mamy najlepszy w Polsce system zamawiania jedzenia online.<br>Gotówka, karta lub szybki przelew<br>Bez logowania i rejestracji<br>20 sekund i załatwione!<br>
+</div>
+      </div>
+
+      <div class="modal-footer text-centered">
+        
+        
+        
+        <a href="/#section-menu" class="btn btn-primary btn-lg">Menu!</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<noscript>
+  <div class="notification notification--error js-notify" id="notification-no-js" role="alert" data-notify-key="notify-session-no-js">
+    <a href="#notification-no-js" role="button" class="notification__close u-color-inherit js-notify-close" title="Zamknij"><span aria-hidden="true">&times;</span></a>
+    <div class="container">
+      Do prawidłowego działania strony wymagana jest obsługa <strong>JavaScript</strong>. Aby odblokować JavaScript w przeglądarce należy kierować się <a href="http://www.enable-javascript.com/pl/" class="alert-link">tymi instrukcjami</a>.
+    </div>
+  </div>
+</noscript>
+
+<div class="notification notification--error js-notify js-notify-storage" style="display: none;" id="notification-no-storage" role="alert" data-notify-key="notify-session-storage">
+  <button type="button" class="notification__close u-color-inherit js-notify-close" title="Zamknij"><span aria-hidden="true">&times;</span></button>
+  <div class="container">
+    Do prawidłowego działania strony wymagane są <strong>sessionStorage</strong> oraz <strong>localStorage</strong>. Czy korzystasz z trybu przeglądania prywatnego?
+  </div>
+</div>
+
+<div class="notification notification--error js-notify" style="display: none;" id="notification-old-browser" role="alert" data-notify-key="notify-session-old-browser">
+  <button type="button" class="notification__close u-color-inherit js-notify-close" title="Zamknij"><span aria-hidden="true">&times;</span></button>
+  <div class="container">
+    Korzystasz z <strong>przestarzałej przeglądarki</strong>. Prosimy <a href="http://browsehappy.com/" class="alert-link">zaktualizować przeglądarkę</a> w celu bezproblemowego korzystania ze strony.
+  </div>
+</div>
+
+<div class="js-payment-warning"></div>
+
+
+
+
+
+
+<script type="text/javascript">
+  Skubacz.configuration.view_name = 'home';
+  Skubacz.configuration.enable_cart_sizing = false;
+  Skubacz.configuration.country = "PL";
+  Skubacz.configuration.currency = "PLN";
+  Skubacz.configuration.currency_format = {"delimiter":"","format":"%n %u","precision":2,"separator":",","significant":false,"strip_insignificant_zeros":false,"unit":"zł"};
+  Skubacz.configuration.time_zone = "Europe/Warsaw";
+  Skubacz.configuration.authenticity_token = 'ECckLxUnVTPfqt/+rRuJxIgtwok/opv0qHkAb81GjeTRCo9uT433D8rucNz7mlmTyDyUsEoYdCPrVHiCHDQY/A==';
+  Skubacz.configuration.theme_name = "fiesta";
+  Skubacz.configuration.theme_settings = {"cart_modal_image":"/uploads/accounts/36535/media_library/956bdf83-35d3-4b0e-838f-9ca332335b50.jpg?crop=focalpoint\u0026fit=crop\u0026fp-x=0.5\u0026fp-y=0.5\u0026blur=0\u0026rect=591,0,453,1333","dish_image_style":"rounded-circle"};
+  Skubacz.configuration.environment = "production";
+  Skubacz.configuration.imgix_url = "https://restaumatic.imgix.net";
+  Skubacz.configuration.restaurant_slug = "trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9";
+  // Remove after finishing OpenCage tests
+  Skubacz.configuration.id = "40099";
+  Skubacz.configuration.account_id = 36535;
+
+  // Tracking
+  Skubacz.configuration.tracking = {"analyticsV3":{"restaumatic":"UA-42743386-1"},"analyticsV4":{"restaumatic":"G-2XDL375QMZ"},"facebookPixelId":null,"adwordsAnalyticsV4":null,"themeName":"fiesta","siteName":"Trattoria Zacisze Warszawa","siteId":36565,"viewName":"home","activeMenu":false};
+</script>
+
+
+<script type="text/javascript">
+(function () {
+  function isNotSupportedBrowser() {
+    var msie = window.navigator.userAgent.indexOf("MSIE"); // IE 10 or below
+    var trident = window.navigator.userAgent.indexOf("Trident/"); // IE 11
+    return msie > 0 || trident > 0;
+  }
+
+  if (isNotSupportedBrowser()) {
+    document.getElementById("notification-old-browser").style.display = "block";
+  }
+})();
+</script>
+
+<script src="js/site-d590de2f5c3902ad38cc744c301bdb60a7880232633693907d3ea9f1ee2be1bd.js"></script>
+<script src="js/app-38c34352a1d46e103f04.js"></script>
+<script src="js/site-translations-pl-9b4c97e0abcb00a0caa6.js"></script>
+<script type="text/javascript">
+  I18n.defaultLocale = "pl";
+  I18n.locale = "pl";
+</script>
+<script src="js/client-f1449741583d97e6c81c.js"></script>
+
+                          <meta data-cart-menu-path="/api/v1/sites/restaurant_menu/40099/pl?v=148d434fd99ad21835c6f06bcdc87fa1" data-cart-restaurant-path="/restauracja/trattoria-zacisze-b3e99068-d3bd-4f80-b5ab-8a092267eff9">
+                        
+
+
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  </script>
+
+<script async src="js_1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+</script>
+
+
+<script type="text/javascript">
+  var widgetAppId = '425338764160270';
+  var version = "v3.0";
+  var likeBox = false;
+
+
+  var finalAppId = likeBox ? widgetAppId : ''
+  if (finalAppId != '') {
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : finalAppId,
+        cookie     : true,
+        xfbml      : true,
+        version    : version
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }
+</script>
+
+
+
+</body>
+</html>
